@@ -1,15 +1,42 @@
 import { Stack } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { useState } from 'react';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { ScreenContent } from '~/components/ScreenContent';
 
 export default function Home() {
+
+  const [search, setSearch] = useState('')
+
+  const performSearch = () => {
+    console.warn('search')
+
+    // save this search in database
+
+    // srape amazon for this query
+  }
+
   return (
     <>
-      <Stack.Screen options={{ title: 'Tab One' }} />
-      <View style={styles.container}>
-        <ScreenContent path="app/(tabs)/index.tsx" title="Tab One" />
-      </View>
+      <Stack.Screen options={{ title: 'Search' }} />
+      
+
+    <View className='flex-row gap-3 p-3'>
+      <TextInput
+      value={search}
+      onChangeText={setSearch}
+      placeholder='search for product'
+      className='flex-1 m-3 rounded p-3 border border-gray-300
+      bg-slate-50'
+      />
+
+      <Pressable 
+      onPress={performSearch}
+      className='rounded bg-teal-500 p-3'
+      >
+        <Text>Search</Text>
+      </Pressable>
+    </View>
     </>
   );
 }
