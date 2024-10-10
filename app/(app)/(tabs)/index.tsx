@@ -2,7 +2,6 @@ import { router, Stack } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import { ScreenContent } from '~/components/ScreenContent';
 
 export default function Home() {
 
@@ -38,6 +37,7 @@ export default function Home() {
         <Text>Search</Text>
       </Pressable>
     </View>
+
     </>
   );
 }
